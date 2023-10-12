@@ -41,6 +41,18 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'desc' => 'Quản trị viên'
         ]);
+        Role::create([
+            'name' => 'leader',
+            'desc' => 'Ban chủ nhiệm khoa'
+        ]);
+        Role::create([
+            'name' => 'teacher',
+            'desc' => 'Giảng viên'
+        ]);
+        Role::create([
+            'name' => 'student',
+            'desc' => 'Sinh viên'
+        ]);
         $role->givePermissionTo(Permission::all()->pluck('id'));
 
         $user = User::create([
